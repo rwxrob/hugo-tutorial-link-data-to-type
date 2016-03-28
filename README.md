@@ -226,17 +226,14 @@ that next.
 
 ## Viewing Collections
 
-Hugo calls these `lists` and they refer to any time you want to
-view a single web page that has all of the items of a certain type
-together, either at once or paginated, (which we won't get into).
-
-There are [many places Hugo will look](//gohugo.io/templates/list/)
-for these special collection view templates, which originally were
-only known as `lists` but have come to be called `sections` as well,
-although there are connotations to each. In our example we will use
-only the `layout/section` directory since this is the only one
-supported by themes (and yes you really do want to consider starting
-with a theme in the first place even though we don't here).
+Hugo calls collections `lists` and there are [many places Hugo will
+look](//gohugo.io/templates/list/) for these special collection
+view templates, which originally were only known as `lists` but
+have come to be called `sections` as well. Sections seems to be the
+preferred name now since themes only support a
+`themes/THEME/layout/section` directory. *(While we are not using
+themes in this tutorial you really should start with a theme because
+it doesn't hurt.)*
 
 ### Create the List Item Partial
 
