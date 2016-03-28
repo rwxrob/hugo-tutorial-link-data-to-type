@@ -90,7 +90,7 @@ but maybe not.
 
 ## Tutorial
 
-Ok, let's get on with it &hellip; If you prefer you can [fork the
+Ok, let's get on with it. If you prefer you can [fork the
 tutorial site](//github.com/skilstak/hugo-tutorial-link-data-to-type)
 we are making.
 
@@ -102,6 +102,13 @@ nearly empty `data/person/*.toml` files:
 * `data/person/bep.toml`
 * `data/person/robmuh.toml`
 * `data/person/benmuh.toml`
+
+All you need in each one is the empty front-matter section:
+
+```markdown
++++
++++
+```
 
 And some `content` files to match:
 
