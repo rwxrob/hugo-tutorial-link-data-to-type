@@ -209,7 +209,7 @@ There are obviously lots of variations of this but you get the idea.
 The first line is the key, literally. This [`index` Go text template
 function](//golang.org/pkg/text/template/#hdr-Functions) looks up
 the item in the `.Site.Data.person` map that has the index key
-matching the base file name (aka `.File.LogicalName`) of the content
+matching the base file name (aka `substr .File.LogicalName 0 -3`) of the content
 file that triggers the generation of the HTML that will be served
 up from `http://localhost:1313/person/robmuh` for example. 
 
