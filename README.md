@@ -43,19 +43,21 @@ data sources before Hugo even touches it.
 ### Data-centric Over Content-centric
 
 This data-centric (over content-centric) approach is becoming more
-and more common as static sites continue to efficiently and effectively
+common as static sites continue to efficiently and effectively
 replace the overly complex and expensive dynamic database + caching
 server architectures out there. Indeed, this is the same reasoning
 behind the increase in JSON Web and REST APIs in general.
 
 ### Some Must Use .Site.Data
 
-As we've read on the forums, many developers of complex Hugo sites,
-(which we likely will never see because of their enterprise-ness),
-are actually forced to design their Hugo site structure entirely
-from the `data` directory because the precious, primary source of
-the data is behind an API or secure data store that requires it to
-be "dumped" and validated before Hugo builds it. 
+As we've [read on the
+forums](https://discuss.gohugo.io/t/pulling-a-data-file-based-on-filename/967),
+some developers of complex Hugo sites, (which we likely will never
+see because of their enterprise-ness), are actually forced to design
+their Hugo site structure entirely from the `data` directory because
+the precious, primary source of the data is behind an API or secure
+data store that requires it to be "dumped" and validated before
+Hugo builds it.
 
 This not only requires the `data` directory be used but also a
 structure to the data that can be easily validated. In a sense,
