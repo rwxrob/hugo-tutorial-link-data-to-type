@@ -94,14 +94,16 @@ Ok, let's get on with it. If you prefer you can [fork the
 tutorial site](//github.com/skilstak/hugo-tutorial-link-data-to-type)
 we are making.
 
+### Create the Empty Content Files
+
 In this example, we'll create a few logical `person`s in different
 roles: `student`, `admin`, `creator`, and `user`. Start by making some
-nearly empty `data/person/*.toml` files:
+nearly empty `content/person/` files:
 
-* `data/person/spf13.toml`
-* `data/person/bep.toml`
-* `data/person/robmuh.toml`
-* `data/person/benmuh.toml`
+* `data/person/spf13.md`
+* `data/person/bep.md`
+* `data/person/robmuh.md`
+* `data/person/benmuh.md`
 
 All you need in each one is the empty front-matter section:
 
@@ -110,28 +112,145 @@ All you need in each one is the empty front-matter section:
 +++
 ```
 
-And some `content` files to match:
+You can obviously make these with a simple script:
 
-* data/person/spf13.md
-* data/person/bep.md
-* data/person/robmuh.md
-* data/person/benmuh.tmd
+```bash
+for i in spf13 bep robm benmuh;do printf "+++\n+++\n" > $i.md; done
+```
+
+Although content files can also end in `html` we stick with `.md`
+so we have a consistent suffix we can chop off later with
+[substr](//gohugo.io/templates/functions#substr).
+
+That's it for the content for the individual `person` types. The rest
+will come from the `data/person` files.
+
+### Create the Data Files
+
+Now we need the `data/person` TOML files to match:
+
+* `data/person/spf13.toml`
+* `data/person/bep.toml`
+* `data/person/robmuh.toml`
+* `data/person/benmuh.toml`
+
+We'll have to do these by hand, as we would if building up a real
+site. But thankfully this is the only place we need to remember to
+make any changes. Here's one file as an example:
+
+```toml
+name = "Rob Muhlestein"
+github = "robmuh"
+roles = ["student","user"]
+```
+
+This is enough of a data file to illustrate the point. Make sure you
+understand the [data file](/extras/data-files) concept fully to get
+the most out of it. It is really amazing.
+
+### Create a Single Person Partial
+
+We use [partials](/templates/partials) instead of [content
+views](/templates/views), (which require `.Render` because they are
+almost always preferred for their flexibility by allowing the passing
+of context, which `.Render` infers instead causing it to fail when
+using `.Site.Data` and not `.Site.Pages`).
+
+First create the partials directory to keep things organized:
+
+```bash
+mkdir `partials/person`
+```
+
+Now create a partial that just contains the markup for the default
+person view. We will pull this in from the content layout
+`single.html` next. So `partials/person/block.html` would contain:
+
+```html
+<ul>
+  <li>Name: {{ .name }}</li>
+  <li>GitHub: <a href="//github.com/{{ .github }}">{{ .github }}</a>
+  <li>Roles: {{ delimit .roles ", " }}</a>
+</ul>
+```
+
+Nothing fancy really just to make the point. Notice how clean all
+the references are.
+
+### Create the Single Content Type View
+
+Here's where the magic happens and we link it all together.  Now
+is a good time to make sure you understand what a [Hugo Content
+Type](//gohugo.io/content/types) is.
+
+First, get into the `layouts/person` directory. If you haven't made
+one yet, make it. Now add something like the following template
+HTML to the `single.html` file:
+
+```html
+{{ with (index .Site.Data.person (substr $.File.LogicalName 0 -3)) }}
+<!doctype html>
+<html>
+  <head>
+    <title>{{ .name }}</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    {{ partial "person/block" . }}
+  </body>
+</html>
+{{ end }}
+```
+
+There are obviously lots of variations of this but you get the idea.
+The first line is the key. This line looks up the `.Site.Data.person`
+logical data object and matches the base file name (aka
+`.File.LogicalName`) of the content file being used to generate the
+HTML that will be served up from `/person/robmu/` for example. If
+everything is set you should be able to run `hugo server` and pull
+it up at `http://localhost:1313/person/robmuh`. Keep in mind that
+`http://localhost:1313/person` will not yet work. We'll do that
+next.
+
+## Viewing Collections
+
+Hugo calls these `lists` and they refer to any time you want to
+view a single web page that has all of the items of a certain type
+together, either at once or paginated, (which we won't get into).
+
+There are [many places Hugo will look](//gohugo.io/templates/list/)
+for these special collection view templates, which originally were
+only known as `lists` but have come to be called `sections` as well,
+although there are connotations to each. In our example we will use
+only the `layout/section` directory since this is the only one
+supported by themes (and yes you really do want to consider starting
+with a theme in the first place even though we don't here).
+
+### Create the List Item Partial
+
+Before we create the `layout/section` page let's make a
+`layouts/partials/person/li.html` that we can easily use in it:
+
+```html
+<li><a href="/{{ .github }}/">{{ .name }}</a></li>
+
+```
+
+That's it. Short and sweet.
+
+### 
 
 
 
-web page `/student/demo`. We'll also add a `/layouts/section/students.html`
-template to list all the students, who are just `person` data objects
-that have the `student` role.
+### Turn On the Collection View 
 
-## Use `layouts/section/student.html` for Collection (List) View
+Like everything else in Hugo, nothing gets built without something
+in the `content` directory. In the case of our collection view all
+we need directory that matches the name with a single empty file
+in it that we'll call `on.md`:
 
-Hugo comes with a built in method for displaying collections of
-content types, which Hugo docs refer to as "lists". While this is very
-convenient for simple sites, it is insufficient for a site driven by
-the `data` directory like the one we are building. So we make our own
-section (list) view in `layouts/section/student.html` that will be
-used when users put only `/student/` into the browser. We'll talk
-about how to make `/students/` just work as well later.
+
+
 
 Sometimes setting `pluralizelisttitles` to `false` isn't enough and
 you want to control the entire look of your collection view.
