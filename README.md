@@ -245,9 +245,10 @@ Before we create the `layout/section` page let's make a
 
 ```
 
-That's it. Short and sweet. Notice we linked to site root permalink
-that matches the `.Site.Data.person.github` value. We'll use `github`
-as our unique identifier for "persons".
+That's it. Short and sweet. Notice we linked to a relative link
+matching the `.github` user name. We'll use `github` as our unique
+identifier for "persons", but that sounds weird so let's fix it with
+a permalink and configuration addition.
 
 ### Add Person Permalinks
 
