@@ -245,7 +245,24 @@ Before we create the `layout/section` page let's make a
 
 ```
 
-That's it. Short and sweet.
+That's it. Short and sweet. Notice we linked to site root permalink.
+
+### Add Person Permalinks
+
+This is where we run into a limitation in the theme system somewhat.
+There is something of a debate about whether permalinks should be able
+to be dictated by a theme or not. Currently the theme does not have
+this ability so you need to add them to your `config.toml` file. While
+we are at it let's add a `.Site.Title`:
+
+```toml
+title = "Testing Hugo Data Linked To Content Type"
+[permalinks]
+person = "/:filename"
+```
+
+Since a `person` is a fundamental data type we don't have a problem
+with permalinking its unique identifier.
 
 ### 
 
