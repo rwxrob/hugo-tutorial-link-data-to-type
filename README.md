@@ -13,24 +13,25 @@ provider.
 
 Many beginners, however, do not realize that to use data files
 effectively still requires the minimal use of
-[`content`](/content/organization) files.
+[`content`](//gohugo.io/content/organization) files.
 
 This tutorial suggests one way to minimize the use of `content`
-files by linking your data files to Hugo [content types](/content/types).
-We use substring of the less known `.File.LogicalName` template
-variable in the `layouts/TYPE/single.html` template to link to a
-matching `.Site.Data` object that has the same base name as the
-nearly-empty content file (ex: `content/student/steve.md` <->
-`data/student/steve.toml`).  This way you don't have to put anything
-in the front-matter of the content file. Yeah, I thought I saw you
-smile.
+files by linking your data files to Hugo [content
+types](//gohugo.io/content/types).  We use substring of the less
+known `.File.LogicalName` template variable in the
+`layouts/TYPE/single.html` template to link to a matching `.Site.Data`
+object that has the same base name as the nearly-empty content file
+(ex: `content/student/steve.md` <-> `data/student/steve.toml`).
+This way you don't have to put anything in the front-matter of the
+content file. Yeah, I thought I saw you smile.
 
 ## Why?
 
 Often the easiest answer is just to not use the `data` directory
 and put whatever was in your TOML/JSON/YAML files into the front
 matter of your content documents. (If all of that sounds confusing
-you might want to go back and [read about it](/content/front-matter).)
+you might want to go back and [read about
+it](//gohugo.io/content/front-matter).)
 
 Just using the `content` directory has the advantage of keeping all
 the content in one place but starts to fall down as the complexity
@@ -76,8 +77,8 @@ be perfect for the job.
 ## What You Already Need to Know
 
 You should have a firm grasp on Hugo [source
-organization](/overview/source-directory) and how [data
-files](/extras/datafiles) work. This tutorial uses
+organization](//gohugo.io/overview/source-directory) and how [data
+files](//gohugo.io/extras/datafiles) work. This tutorial uses
 [TOML](https://github.com/toml-lang/toml), which was designed for
 structured data files that are maintained by humans.
 
