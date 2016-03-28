@@ -148,7 +148,7 @@ This is enough of a data file to illustrate the point. Make sure
 you understand the [data file](//gohugo.io/extras/data-files) concept
 fully to get the most out of it. It is really amazing.
 
-### Create a Single Person Partial
+### Create a Person Block Partial
 
 We use [partials](//gohugo.io/templates/partials) instead of [content
 views](//gohugo.io/templates/views), (which require
@@ -206,14 +206,23 @@ HTML to the `single.html` file:
 ```
 
 There are obviously lots of variations of this but you get the idea.
-The first line is the key. This line looks up the `.Site.Data.person`
-logical data object and matches the base file name (aka
-`.File.LogicalName`) of the content file being used to generate the
-HTML that will be served up from `/person/robmu/` for example. If
-everything is set you should be able to run `hugo server` and pull
-it up at `http://localhost:1313/person/robmuh`. Keep in mind that
-`http://localhost:1313/person` will not yet work. We'll do that
-next.
+The first line is the key, literally. This [`index` Go text template
+function](//golang.org/pkg/text/template/#hdr-Functions) looks up
+the item in the `.Site.Data.person` map that has the index key
+matching the base file name (aka `.File.LogicalName`) of the content
+file that triggers the generation of the HTML that will be served
+up from `http://localhost:1313/person/robmuh` for example. 
+
+Notice `substr` chops the last three characters off of `.File.LogicalName`,
+which is why we name all our `content/person` files with `.md` at
+the end.
+
+### Try It Out
+
+If everything is set you should be able to run `hugo server` and
+pull it up at `http://localhost:1313/person/robmuh`. Keep in mind
+that `http://localhost:1313/person` will not yet work. We'll do
+that next.
 
 ## Viewing Collections
 
