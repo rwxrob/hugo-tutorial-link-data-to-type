@@ -82,9 +82,11 @@ and architecture. Hugo just happens to be perfect for the job.
 
 You should have a firm grasp on Hugo [source
 organization](//gohugo.io/overview/source-directory) and how [data
-files](//gohugo.io/extras/datafiles) work. This tutorial uses
-[TOML](https://github.com/toml-lang/toml), which was designed for
-structured data files that are maintained by humans.
+files](//gohugo.io/extras/datafiles) work. This tutorial uses the
+beautiful [TOML](https://github.com/toml-lang/toml), which was
+designed for structured data files that are maintained by humans.
+If you are tying into other data sources you might want to use JSON,
+but maybe not.
 
 ## Overview
 
