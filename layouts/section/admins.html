@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head><title>Administrators</title></head>
+  <body>
+    <h1>Administrators</h1>
+    <ul>
+      {{ range .Site.Data.person }}
+        {{ if in .roles "admin" }}{{ partial "person/li" . }}{{ end }}
+      {{ end }}
+    </ul>
+  </body>
+</html>

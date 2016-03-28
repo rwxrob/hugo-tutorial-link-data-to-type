@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+  <head><title>People</title></head>
+  <body>
+    <h1>People</h1>
+    <ul>
+      {{ range .Site.Data.person }}
+        {{ partial "person/li" . }}
+      {{ end }}
+    </ul>
+  </body>
+</html>

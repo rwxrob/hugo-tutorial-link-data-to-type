@@ -1,3 +1,4 @@
 name = "Bjørn Erik Pedersen"
 github = "bep"
+roles = ["admin","user"]
 

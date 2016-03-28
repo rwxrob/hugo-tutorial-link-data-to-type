@@ -1,0 +1,4 @@
+title = "Example: Linking Hugo Data to Content Types"
+
+[permalinks]
+person = ":filename"
