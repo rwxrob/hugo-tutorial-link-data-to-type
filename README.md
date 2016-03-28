@@ -88,16 +88,33 @@ designed for structured data files that are maintained by humans.
 If you are tying into other data sources you might want to use JSON,
 but maybe not.
 
-## Overview
+## Tutorial
 
-Ok, let's get on with it &hellip;
+Ok, let's get on with it &hellip; If you prefer you can [fork the
+tutorial site](//github.com/skilstak/hugo-tutorial-link-data-to-type)
+we are making.
 
-In this example, we'll use a logical `person` in the role of a
-`student`. In other words, we'll have a `data/person/demo.toml`
-file and display it as a singular web page `/student/demo`. We'll
-also add a `/layouts/section/students.html` template to list all
-the students, who are just `person` data objects that have the
-`student` role.
+In this example, we'll create a few logical `person`s in different
+roles: `student`, `admin`, `creator`, and `user`. Start by making some
+nearly empty `data/person/*.toml` files:
+
+* `data/person/spf13.toml`
+* `data/person/bep.toml`
+* `data/person/robmuh.toml`
+* `data/person/benmuh.toml`
+
+And some `content` files to match:
+
+* data/person/spf13.md
+* data/person/bep.md
+* data/person/robmuh.md
+* data/person/benmuh.tmd
+
+
+
+web page `/student/demo`. We'll also add a `/layouts/section/students.html`
+template to list all the students, who are just `person` data objects
+that have the `student` role.
 
 ## Use `layouts/section/student.html` for Collection (List) View
 
