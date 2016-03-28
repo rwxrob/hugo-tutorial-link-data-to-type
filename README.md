@@ -3,16 +3,17 @@
 tutorial](//gohugo.io/tutorial/link-data-to-type) of
 the same title*
 
-# Hugo Tutorial: Linking Data to Hugo Types
+# Linking Data to Hugo Types
 
 For many the most powerful part of Hugo is its amazing support for
-structured [data files](/extras/datafiles). This feature allows
+structured [data files](//gohugo.io/extras/datafiles). This feature allows
 Hugo to truly replace sites dependent on low-volume databases and
 gain all the advantages of hosting your site on a full CDN hosting
 provider.
 
 Many beginners, however, do not realize that to use data files
-effectively still requires the minimal use of `content` files.
+effectively still requires the minimal use of
+[`content`](/content/organization) files.
 
 This tutorial suggests one way to minimize the use of `content`
 files by linking your data files to Hugo [content types](/content/types).
