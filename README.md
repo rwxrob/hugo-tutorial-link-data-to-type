@@ -78,7 +78,7 @@ would see as "views" of the data. This concept of "views" to organize
 and simplify large amounts of data is a long-standing best-practice
 and architecture. Hugo just happens to be perfect for the job.
 
-## What You Already Need to Know
+## Stuff You Should Already Grok
 
 You should have a firm grasp on Hugo [source
 organization](//gohugo.io/overview/source-directory) and how [data
