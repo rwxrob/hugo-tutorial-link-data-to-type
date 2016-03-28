@@ -17,8 +17,9 @@ effectively still requires the minimal use of
 
 This tutorial suggests one way to minimize the use of `content`
 files by linking your data files to Hugo [content
-types](//gohugo.io/content/types).  We use substring of the less
-known `.File.LogicalName` template variable in the
+types](//gohugo.io/content/types).  We use
+[substr](//gohugo.io/templates/functions#substr) on a lesser known—but
+very useful—`.File.LogicalName` template variable in the
 `layouts/TYPE/single.html` template to link to a matching `.Site.Data`
 object that has the same base name as the nearly-empty content file
 (ex: `content/student/steve.md` <-> `data/student/steve.toml`).
