@@ -115,10 +115,10 @@ All you need in each one is the empty front-matter section:
 You can obviously make these with a simple script:
 
 ```bash
-for i in spf13 bep robm benmuh;do printf "+++\n+++\n" > $i.md; done
+for i in spf13 bep robmuh benmuh;do printf "+++\n+++\n" > $i.md; done
 ```
 
-Although content files can also end in `html` we stick with `.md`
+Although content files can also end in `.html` we stick with `.md`
 so we have a consistent suffix we can chop off later with
 [substr](//gohugo.io/templates/functions#substr).
 
@@ -144,27 +144,30 @@ github = "robmuh"
 roles = ["student","user"]
 ```
 
-This is enough of a data file to illustrate the point. Make sure you
-understand the [data file](/extras/data-files) concept fully to get
-the most out of it. It is really amazing.
+This is enough of a data file to illustrate the point. Make sure
+you understand the [data file](//gohugo.io/extras/data-files) concept
+fully to get the most out of it. It is really amazing.
 
 ### Create a Single Person Partial
 
-We use [partials](/templates/partials) instead of [content
-views](/templates/views), (which require `.Render` because they are
-almost always preferred for their flexibility by allowing the passing
-of context, which `.Render` infers instead causing it to fail when
-using `.Site.Data` and not `.Site.Pages`).
+We use [partials](//gohugo.io/templates/partials) instead of [content
+views](//gohugo.io/templates/views), (which require
+[`.Render`](//gohugo.io/templates/views/#rendering-view-inside-of-a-list)
+because they are almost always preferred for their flexibility by
+allowing the passing of context, which `.Render` infers instead
+causing it to fail when using `.Site.Data` and not `.Site.Pages`).
 
 First create the partials directory to keep things organized:
 
 ```bash
-mkdir `partials/person`
+mkdir `layouts/partials/person`
 ```
 
 Now create a partial that just contains the markup for the default
-person view. We will pull this in from the content layout
-`single.html` next. So `partials/person/block.html` would contain:
+person view. We will later pull this in from the content layout
+`single.html`. We'll name our partial "block" to imply the use of
+[BEM methodology](http://getbem.com/introduction/) So
+`layouts/partials/person/block.html` would contain:
 
 ```html
 <ul>
