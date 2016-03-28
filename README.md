@@ -152,10 +152,10 @@ fully to get the most out of it. It is really amazing.
 
 We use [partials](//gohugo.io/templates/partials) instead of [content
 views](//gohugo.io/templates/views), (which require
-[`.Render`](//gohugo.io/templates/views/#rendering-view-inside-of-a-list)
+[`.Render`](//gohugo.io/templates/views/#rendering-view-inside-of-a-list))
 because they are almost always preferred for their flexibility by
 allowing the passing of context, which `.Render` infers instead
-causing it to fail when using `.Site.Data` and not `.Site.Pages`).
+causing it to fail when using `.Site.Data` and not `.Site.Pages`.
 
 First create the partials directory to keep things organized:
 
