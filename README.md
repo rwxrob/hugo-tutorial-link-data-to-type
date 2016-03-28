@@ -241,11 +241,13 @@ Before we create the `layout/section` page let's make a
 `layouts/partials/person/li.html` that we can easily use in it:
 
 ```html
-<li><a href="/{{ .github }}/">{{ .name }}</a></li>
+<li><a href="/person/{{ .github }}/">{{ .name }}</a></li>
 
 ```
 
-That's it. Short and sweet. Notice we linked to site root permalink.
+That's it. Short and sweet. Notice we linked to site root permalink
+that matches the `.Site.Data.person.github` value. We'll use `github`
+as our unique identifier for "persons".
 
 ### Add Person Permalinks
 
@@ -264,7 +266,44 @@ person = "/:filename"
 Since a `person` is a fundamental data type we don't have a problem
 with permalinking its unique identifier.
 
-### 
+Now you can remove the `person` portion of the link in the `li.html`
+partial view:
+
+```html
+<li><a href="/{{ .github }}/">{{ .name }}</a></li>
+```
+
+### Add in Some CSS
+
+Through the following into your `/static/styles.css` if you like:
+
+```css
+body {
+  margin: 5rem;
+  font-family: "Helvetica", "Arial", sans-serif;
+  background: lightgrey;
+}
+
+li {
+  padding .2rem;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+}
+
+a:hover {
+  color: goldenrod;
+}
+```
+
+Ah, much better, well at least a little.
+
+### Adding Another Collection View
+
 
 
 
