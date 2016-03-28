@@ -1,0 +1,11 @@
+{{ with (index .Site.Data.person (substr $.File.LogicalName 0 -3)) }}
+<!doctype html>
+<html>
+  <head>
+    <title>{{ .name }}</title>
+  </head>
+  <body>
+    {{ partial "student/block" . }}
+  </body>
+</html>
+{{ end }}
