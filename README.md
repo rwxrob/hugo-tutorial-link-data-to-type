@@ -103,7 +103,7 @@ nearly empty `content/person/` files:
 * `data/person/spf13.md`
 * `data/person/bep.md`
 * `data/person/robmuh.md`
-* `data/person/benmuh.md`
+* `data/person/betropper.md`
 
 All you need in each one is the empty front-matter section:
 
@@ -115,7 +115,7 @@ All you need in each one is the empty front-matter section:
 You can obviously make these with a simple script:
 
 ```bash
-for i in spf13 bep robmuh benmuh;do printf "+++\n+++\n" > $i.md; done
+for i in spf13 bep robmuh betropper;do printf "+++\n+++\n" > $i.md; done
 ```
 
 Although content files can also end in `.html` we stick with `.md`
@@ -132,7 +132,7 @@ Now we need the `data/person` TOML files to match:
 * `data/person/spf13.toml`
 * `data/person/bep.toml`
 * `data/person/robmuh.toml`
-* `data/person/benmuh.toml`
+* `data/person/betropper.toml`
 
 We'll have to do these by hand, as we would if building up a real
 site. But thankfully this is the only place we need to remember to
