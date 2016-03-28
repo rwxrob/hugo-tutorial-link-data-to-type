@@ -275,7 +275,7 @@ partial view:
 
 ### Add in Some CSS
 
-Through the following into your `/static/styles.css` if you like:
+Throw the following into your `/static/styles.css` if you like:
 
 ```css
 body {
@@ -302,35 +302,83 @@ a:hover {
 
 Ah, much better, well at least a little.
 
-### Adding Another Collection View
 
+## Adding Another Collection View
 
+The logical idea of a `person` looks good in UML and data design
+diagrams but no one really uses it. What they really want is to see
+what role that person has in the organization. In our tutorial there
+are `admins`, `creators`, `users`, and `students`, each potentially
+with extra data related to that role inside their individual
+`data/person` files. But how do we create collection views for these
+different roles? This is where [content list
+templates](//gohugo.io/templates/list/), which some prefer to call
+section templates, come in.
 
-
-### Turn On the Collection View 
+### Turn On the Collection Section View 
 
 Like everything else in Hugo, nothing gets built without something
-in the `content` directory. In the case of our collection view all
-we need directory that matches the name with a single empty file
-in it that we'll call `on.md`:
+being in the `content` directory. In the case of our collection
+section view all we need is a directory that matches the name of
+the section we want containing a single empty file that we'll call
+`on.md`:
 
+```bash
+mkdir content/students
+touch content/students/on.md
+```
 
+Notice we named our section students instead of student. Try
+`http://localhost:1313/person` in comparison. Notice the title is
+"persons". This is a case for setting `pluralizelisttitles` to
+`false` in your `config.toml`. If this isn't enough you can add
+another `http://localhost:1313/people` view using the same steps as
+those we are doing for `students` now.
 
+### Create the Students Section View
 
-Sometimes setting `pluralizelisttitles` to `false` isn't enough and
-you want to control the entire look of your collection view.
+This is the same as earlier just with a logical filter to only include
+those `person` data objects that have `student` in their roles. To
+save time just copy the `layout/sections/person.html` file to
+`layout/sections/students.html`, which will look like this when you
+are done with it:
 
-## Students Only
+```html
+<!doctype html>
+<html>
+  <head>
+    <title>Students</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <h1>Students</h1>
+    <ul>
+      {{ range .Site.Data.person }}
+        {{ if in .roles "student" }}{{ partial "person/li" . }}{{ end }}
+      {{ end }}
+    </ul>
+  </body>
+</html>
+```
 
-To isolate our larger data set of `person`s we add the following:
+Obviously a lot of this should be factored into partials such as a
+`top` and `bottom` so that other views can be quickly added but
+this conveys the idea.
 
-
-
-
-
+***Trade Offs:***This is where the
+[`where`](//gohugo.io/templates/functions/#where) function would
+come in really handy, if it worked. Unfortunately it, along with
+all the grouping functions don't work with `.Site.Data` and probably
+never will. But we really don't need them because we can use the
+standard [`range sort`](//gohugo.io/templates/functions/#sort),
+which is probably a better habit and dependency anyway.
 
 
 ## Use Data Views with Partials Instead of Content Views
+
+Before we end this tutorial it is important to discuss why
+[partials](//gohugo.io/templates/partials) are more valuable than
+[content views](//gohugo.io/templates/views).
 
 [Content views](http://gohugo.io/templates/functions/#content-views),
 which require `.Render` to have a context only work with content

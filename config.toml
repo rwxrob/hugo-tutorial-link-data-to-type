@@ -1,4 +1,5 @@
 title = "Example: Linking Hugo Data to Content Types"
+pluralizelisttitles = false
 
 [permalinks]
 person = ":filename"
