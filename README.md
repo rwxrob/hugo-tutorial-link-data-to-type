@@ -68,14 +68,15 @@ application business logic.
 ### Automated Data Views
 
 You can probably see where this is going. Most data is read and
-viewed way more often than it is written. Workflows are even emerging
-with watchdogs and cron jobs that auto dump to `data` triggering a
-live data validation process followed by a Hugo compile and push
-deployment. In this sense Hugo sites are just what traditional
-database people would see as "views" of the data. This concept of
-"views" to organize and simplify large amounts of data is a
-long-standing best-practice and architecture. Hugo just happens to
-be perfect for the job.
+viewed way more often than it is written. Hugo workflows are being
+combined with watchdogs and cron jobs that auto dump to `data`
+triggering a live data validation process followed by a Hugo compile
+and push deployment.
+
+In this sense Hugo sites are just what traditional database people
+would see as "views" of the data. This concept of "views" to organize
+and simplify large amounts of data is a long-standing best-practice
+and architecture. Hugo just happens to be perfect for the job.
 
 ## What You Already Need to Know
 
