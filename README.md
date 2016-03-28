@@ -373,6 +373,11 @@ never will. But we really don't need them because we can use the
 standard [`range sort`](//gohugo.io/templates/functions/#sort),
 which is probably a better habit and dependency anyway.
 
+### Experiment
+
+Now that we've created the `students` data view (or section) you can
+experiment with tweeking everything to add views for `users`,
+`creators`, `admins`, and `people`.
 
 ## Use Data Views with Partials Instead of Content Views
 
@@ -389,4 +394,13 @@ Instead of a `/layouts/student/li.html` we have a
 `layouts/partials/student/li.html` and follow that convention when
 adding different views of our data. Many agree this is better anyway
 because of the flexibility it affords.
+
+## Conclusion
+
+At this point you should have all the boilerplate you need to get
+a solid, data-driven Hugo site up and running. The data model is
+up to you. Perhaps you have it already polished in UML, perhaps
+not.  But this approach affords the most flexibility and efficiency
+when implementing changes to the most important part of many complex
+sites, the data.
 
