@@ -90,9 +90,10 @@ but maybe not.
 
 ## Tutorial
 
-Ok, let's get on with it. If you prefer you can [fork the
-tutorial site](https://github.com/skilstak/hugo-tutorial-link-data-to-type)
-we are making.
+Ok, let's get on with it. If you prefer you can [fork the tutorial
+site](https://github.com/skilstak/hugo-tutorial-link-data-to-type)
+we are making. You can also [view the working
+demo](https://skilstak.github.io/hugo-tutorial-link-data-to-type).
 
 ### Create the Empty Content Files
 
