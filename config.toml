@@ -1,4 +1,7 @@
+# make gh-pages happy
 baseurl = "https://skilstak.github.io/hugo-tutorial-link-data-to-type"
+canonifyurls = true
+
 title = "Example: Linking Hugo Data to Content Types"
 pluralizelisttitles = false
 

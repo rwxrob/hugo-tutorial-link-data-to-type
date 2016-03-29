@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Admins on Example: Linking Hugo Data to Content Types</title>
-    <link>/admins/</link>
+    <link>https://skilstak.github.io/hugo-tutorial-link-data-to-type/admins/</link>
     <description>Recent content in Admins on Example: Linking Hugo Data to Content Types</description>
     <generator>Hugo -- gohugo.io</generator>
-    <atom:link href="/admins/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://skilstak.github.io/hugo-tutorial-link-data-to-type/admins/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>/admins/on/</link>
+      <link>https://skilstak.github.io/hugo-tutorial-link-data-to-type/admins/on/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/admins/on/</guid>
+      <guid>https://skilstak.github.io/hugo-tutorial-link-data-to-type/admins/on/</guid>
       <description></description>
     </item>
     
