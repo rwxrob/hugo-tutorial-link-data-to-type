@@ -375,7 +375,7 @@ don't need them because we can use the standard [`range
 sort`](https://gohugo.io/templates/functions/#sort), which is
 probably a better habit and dependency anyway.
 
-***Beware:***Where will not work here because, and let's emphasize
+***Beware:*** Where will not work here because, and let's emphasize
 [this](https://gohugo.io/templates/functions/#where), "**`where`**
 only works on lists, taxonomies, terms, and groups". `.Data.Pages`
 is a list so it works. The way we have organized our `data/person`
