@@ -145,7 +145,7 @@ roles = ["student","user"]
 ```
 
 This is enough of a data file to illustrate the point. Make sure
-you understand the [data file](https://gohugo.io/extras/data-files/) concept
+you understand the [data file](https://gohugo.io/extras/datafiles/) concept
 fully to get the most out of it. It is really amazing.
 
 ### Create a Person Block Partial
