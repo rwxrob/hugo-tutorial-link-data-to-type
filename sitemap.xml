@@ -2,36 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/</loc>
+    <loc>https://skilstak.github.io/hugo-tutorial-link-data-to-type/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/admins/on/</loc>
+    <loc>https://skilstak.github.io/hugo-tutorial-link-data-to-type/admins/on/</loc>
   </url>
   
   <url>
-    <loc>/creators/on/</loc>
+    <loc>https://skilstak.github.io/hugo-tutorial-link-data-to-type/creators/on/</loc>
   </url>
   
   <url>
-    <loc>bep</loc>
+    <loc>https://skilstak.github.io/hugo-tutorial-link-data-to-type/bep</loc>
   </url>
   
   <url>
-    <loc>betropper</loc>
+    <loc>https://skilstak.github.io/hugo-tutorial-link-data-to-type/betropper</loc>
   </url>
   
   <url>
-    <loc>robmuh</loc>
+    <loc>https://skilstak.github.io/hugo-tutorial-link-data-to-type/robmuh</loc>
   </url>
   
   <url>
-    <loc>spf13</loc>
+    <loc>https://skilstak.github.io/hugo-tutorial-link-data-to-type/spf13</loc>
   </url>
   
   <url>
-    <loc>/students/on/</loc>
+    <loc>https://skilstak.github.io/hugo-tutorial-link-data-to-type/students/on/</loc>
   </url>
   
 </urlset>

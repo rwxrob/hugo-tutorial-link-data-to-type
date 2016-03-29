@@ -2,71 +2,71 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Example: Linking Hugo Data to Content Types</title>
-    <link>/</link>
+    <link>https://skilstak.github.io/hugo-tutorial-link-data-to-type/</link>
     <description>Recent content on Example: Linking Hugo Data to Content Types</description>
     <generator>Hugo -- gohugo.io</generator>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://skilstak.github.io/hugo-tutorial-link-data-to-type/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>/admins/on/</link>
+      <link>https://skilstak.github.io/hugo-tutorial-link-data-to-type/admins/on/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/admins/on/</guid>
+      <guid>https://skilstak.github.io/hugo-tutorial-link-data-to-type/admins/on/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>/creators/on/</link>
+      <link>https://skilstak.github.io/hugo-tutorial-link-data-to-type/creators/on/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/creators/on/</guid>
+      <guid>https://skilstak.github.io/hugo-tutorial-link-data-to-type/creators/on/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>bep</link>
+      <link>https://skilstak.github.io/hugo-tutorial-link-data-to-type/bep</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>bep</guid>
+      <guid>https://skilstak.github.io/hugo-tutorial-link-data-to-type/bep</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>betropper</link>
+      <link>https://skilstak.github.io/hugo-tutorial-link-data-to-type/betropper</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>betropper</guid>
+      <guid>https://skilstak.github.io/hugo-tutorial-link-data-to-type/betropper</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>robmuh</link>
+      <link>https://skilstak.github.io/hugo-tutorial-link-data-to-type/robmuh</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>robmuh</guid>
+      <guid>https://skilstak.github.io/hugo-tutorial-link-data-to-type/robmuh</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>spf13</link>
+      <link>https://skilstak.github.io/hugo-tutorial-link-data-to-type/spf13</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>spf13</guid>
+      <guid>https://skilstak.github.io/hugo-tutorial-link-data-to-type/spf13</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>/students/on/</link>
+      <link>https://skilstak.github.io/hugo-tutorial-link-data-to-type/students/on/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/students/on/</guid>
+      <guid>https://skilstak.github.io/hugo-tutorial-link-data-to-type/students/on/</guid>
       <description></description>
     </item>
     
