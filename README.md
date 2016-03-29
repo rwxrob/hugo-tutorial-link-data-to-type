@@ -366,13 +366,12 @@ Obviously a lot of this should be factored into partials such as a
 `top` and `bottom` so that other views can be quickly added but
 this conveys the idea.
 
-***Trade Offs:***This is where the
-[`where`](//gohugo.io/templates/functions/#where) function would
-come in really handy, if it worked. Unfortunately it, along with
-all the grouping functions don't work with `.Site.Data` and probably
-never will. But we really don't need them because we can use the
-standard [`range sort`](//gohugo.io/templates/functions/#sort),
-which is probably a better habit and dependency anyway.
+***Trade Offs:*** Unfortunately the grouping functions you may have
+become accustomed to when dealing with `.Site.Pages` simply don't
+work with `.Site.Data` and probably never will. But we really don't
+need them because we can use the standard [`range
+sort`](//gohugo.io/templates/functions/#sort), which is probably a
+better habit and dependency anyway.
 
 ### Experiment
 
