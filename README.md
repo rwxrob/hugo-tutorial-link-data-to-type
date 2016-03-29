@@ -1,24 +1,24 @@
 
 *Note: this tutorial content is taken from the [Hugo
-tutorial](//gohugo.io/tutorial/link-data-to-type/) of
+tutorial](https://gohugo.io/tutorial/link-data-to-type/) of
 the same title*
 
 # Linking Data to Hugo Types
 
 For many the most powerful part of Hugo is its amazing support for
-structured [data files](//gohugo.io/extras/datafiles/). This feature allows
+structured [data files](https://gohugo.io/extras/datafiles/). This feature allows
 Hugo to truly replace sites dependent on low-volume databases and
 gain all the advantages of hosting your site on a full CDN hosting
 provider.
 
 Many beginners, however, do not realize that to use data files
 effectively still requires the minimal use of
-[`content`](//gohugo.io/content/organization/) files.
+[`content`](https://gohugo.io/content/organization/) files.
 
 This tutorial suggests one way to minimize the use of `content`
 files by linking your data files to Hugo [content
-types](//gohugo.io/content/types/).  We use
-[substr](//gohugo.io/templates/functions#substr/) on a lesser known—but
+types](https://gohugo.io/content/types/).  We use
+[substr](https://gohugo.io/templates/functions#substr/) on a lesser known—but
 very useful—`.File.LogicalName` template variable in the
 `layouts/TYPE/single.html` template to link to a matching `.Site.Data`
 object that has the same base name as the nearly-empty content file
@@ -32,7 +32,7 @@ Often the easiest answer is just to not use the `data` directory
 and put whatever was in your TOML/JSON/YAML files into the front
 matter of your content documents. (If all of that sounds confusing
 you might want to go back and [read about
-it](//gohugo.io/content/front-matter/).)
+it](https://gohugo.io/content/front-matter/).)
 
 Just using the `content` directory has the advantage of keeping all
 the content in one place but starts to fall down as the complexity
@@ -81,8 +81,8 @@ and architecture. Hugo just happens to be perfect for the job.
 ## Stuff You Should Already Grok
 
 You should have a firm grasp on Hugo [source
-organization](//gohugo.io/overview/source-directory/) and how [data
-files](//gohugo.io/extras/datafiles/) work. This tutorial uses the
+organization](https://gohugo.io/overview/source-directory/) and how [data
+files](https://gohugo.io/extras/datafiles/) work. This tutorial uses the
 beautiful [TOML](https://github.com/toml-lang/toml), which was
 designed for structured data files that are maintained by humans.
 If you are tying into other data sources you might want to use JSON,
@@ -120,7 +120,7 @@ for i in spf13 bep robmuh betropper;do printf "+++\n+++\n" > $i.md; done
 
 Although content files can also end in `.html` we stick with `.md`
 so we have a consistent suffix we can chop off later with
-[substr](//gohugo.io/templates/function/#substr).
+[substr](https://gohugo.io/templates/function/#substr).
 
 That's it for the content for the individual `person` types. The rest
 will come from the `data/person` files.
@@ -145,14 +145,14 @@ roles = ["student","user"]
 ```
 
 This is enough of a data file to illustrate the point. Make sure
-you understand the [data file](//gohugo.io/extras/data-files/) concept
+you understand the [data file](https://gohugo.io/extras/data-files/) concept
 fully to get the most out of it. It is really amazing.
 
 ### Create a Person Block Partial
 
-We use [partials](//gohugo.io/templates/partials/) instead of [content
-views](//gohugo.io/templates/views/), (which require
-[`.Render`](//gohugo.io/templates/views/#rendering-view-inside-of-a-list)),
+We use [partials](https://gohugo.io/templates/partials/) instead of [content
+views](https://gohugo.io/templates/views/), (which require
+[`.Render`](https://gohugo.io/templates/views/#rendering-view-inside-of-a-list)),
 because they are almost always preferred for their flexibility by
 allowing the passing of context, (which `.Render` infers instead
 causing it to fail when using `.Site.Data` and not `.Site.Pages`).
@@ -184,7 +184,7 @@ the references are.
 
 Here's where the magic happens and we link it all together.  Now
 is a good time to make sure you understand what a [Hugo Content
-Type](//gohugo.io/content/types/) is.
+Type](https://gohugo.io/content/types/) is.
 
 First, get into the `layouts/person` directory. If you haven't made
 one yet, make it. Now add something like the following template
@@ -207,7 +207,7 @@ HTML to the `single.html` file:
 
 There are obviously lots of variations of this but you get the idea.
 The first line is the key, literally. This [`index` Go text template
-function](//golang.org/pkg/text/template/#hdr-Functions) looks up
+function](https://golang.org/pkg/text/template/#hdr-Functions) looks up
 the item in the `.Site.Data.person` map that has the index key
 matching the base file name (aka `substr .File.LogicalName 0 -3`) of the content
 file that triggers the generation of the HTML that will be served
@@ -227,7 +227,7 @@ that next.
 ## Viewing Collections
 
 Hugo calls collections `lists` and there are [many places Hugo will
-look](//gohugo.io/templates/list/) for these special collection
+look](https://gohugo.io/templates/list/) for these special collection
 view templates, which originally were only known as `lists` but
 have come to be called `sections` as well. Sections seems to be the
 preferred name now since themes only support a
@@ -313,7 +313,7 @@ are `admins`, `creators`, `users`, and `students`, each potentially
 with extra data related to that role inside their individual
 `data/person` files. But how do we create collection views for these
 different roles? This is where [content list
-templates](//gohugo.io/templates/list/), which some prefer to call
+templates](https://gohugo.io/templates/list/), which some prefer to call
 section templates, come in.
 
 ### Turn On the Collection Section View 
@@ -370,7 +370,7 @@ this conveys the idea.
 become accustomed to when dealing with `.Site.Pages` simply don't
 work with `.Site.Data` and probably never will. But we really don't
 need them because we can use the standard [`range
-sort`](//gohugo.io/templates/functions/#sort), which is probably a
+sort`](https://gohugo.io/templates/functions/#sort), which is probably a
 better habit and dependency anyway.
 
 ### Experiment
@@ -382,10 +382,10 @@ experiment with tweaking everything to add views for `users`,
 ## Use Data Views with Partials Instead of Content Views
 
 Before we end this tutorial it is important to discuss why
-[partials](//gohugo.io/templates/partials/) are more valuable than
-[content views](//gohugo.io/templates/views/).
+[partials](https://gohugo.io/templates/partials/) are more valuable than
+[content views](https://gohugo.io/templates/views/).
 
-[Content views](//gohugo.io/templates/functions/#content-views),
+[Content views](https://gohugo.io/templates/functions/#content-views),
 which require `.Render` to have a context only work with content
 types. Partials, which accept a context as the first argument,  work
 with anything and are therefore much easier to work with in general
