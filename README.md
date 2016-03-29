@@ -150,12 +150,13 @@ fully to get the most out of it. It is really amazing.
 
 ### Create a Person Block Partial
 
-We use [partials](https://gohugo.io/templates/partials/) instead of [content
-views](https://gohugo.io/templates/views/), (which require
-[`.Render`](https://gohugo.io/templates/views/#rendering-view-inside-of-a-list)),
-because they are almost always preferred for their flexibility by
-allowing the passing of context, (which `.Render` infers instead
-causing it to fail when using `.Site.Data` and not `.Site.Pages`).
+We use [partials](https://gohugo.io/templates/partials/) instead
+of [content views](https://gohugo.io/templates/views/), which are
+older than partials and require
+[`.Render`](https://gohugo.io/templates/views/#rendering-view-inside-of-a-list).
+These days partials are almost always preferred for their flexibility
+by allowing the passing of context, (which `.Render` infers instead
+causing it to fail when using `.Site.Data` and not `.Data.Pages`).
 
 First create the partials directory to keep things organized:
 
@@ -379,22 +380,6 @@ probably a better habit and dependency anyway.
 Now that we've created the `students` data view (or section) you can
 experiment with tweaking everything to add views for `users`,
 `creators`, `admins`, and `people`.
-
-## Use Data Views with Partials Instead of Content Views
-
-Before we end this tutorial it is important to discuss why
-[partials](https://gohugo.io/templates/partials/) are more valuable than
-[content views](https://gohugo.io/templates/views/).
-
-[Content views](https://gohugo.io/templates/functions/#content-views),
-which require `.Render` to have a context only work with content
-types. Partials, which accept a context as the first argument,  work
-with anything and are therefore much easier to work with in general
-and essential when creating what we'll call *data views* in contrast.
-Instead of a `/layouts/student/li.html` we have a
-`layouts/partials/student/li.html` and follow that convention when
-adding different views of our data. Many agree this is better anyway
-because of the flexibility it affords.
 
 ## Conclusion
 
