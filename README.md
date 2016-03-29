@@ -1,24 +1,24 @@
 
 *Note: this tutorial content is taken from the [Hugo
-tutorial](//gohugo.io/tutorial/link-data-to-type) of
+tutorial](//gohugo.io/tutorial/link-data-to-type/) of
 the same title*
 
 # Linking Data to Hugo Types
 
 For many the most powerful part of Hugo is its amazing support for
-structured [data files](//gohugo.io/extras/datafiles). This feature allows
+structured [data files](//gohugo.io/extras/datafiles/). This feature allows
 Hugo to truly replace sites dependent on low-volume databases and
 gain all the advantages of hosting your site on a full CDN hosting
 provider.
 
 Many beginners, however, do not realize that to use data files
 effectively still requires the minimal use of
-[`content`](//gohugo.io/content/organization) files.
+[`content`](//gohugo.io/content/organization/) files.
 
 This tutorial suggests one way to minimize the use of `content`
 files by linking your data files to Hugo [content
-types](//gohugo.io/content/types).  We use
-[substr](//gohugo.io/templates/functions#substr) on a lesser known—but
+types](//gohugo.io/content/types/).  We use
+[substr](//gohugo.io/templates/functions#substr/) on a lesser known—but
 very useful—`.File.LogicalName` template variable in the
 `layouts/TYPE/single.html` template to link to a matching `.Site.Data`
 object that has the same base name as the nearly-empty content file
@@ -32,7 +32,7 @@ Often the easiest answer is just to not use the `data` directory
 and put whatever was in your TOML/JSON/YAML files into the front
 matter of your content documents. (If all of that sounds confusing
 you might want to go back and [read about
-it](//gohugo.io/content/front-matter).)
+it](//gohugo.io/content/front-matter/).)
 
 Just using the `content` directory has the advantage of keeping all
 the content in one place but starts to fall down as the complexity
@@ -81,8 +81,8 @@ and architecture. Hugo just happens to be perfect for the job.
 ## Stuff You Should Already Grok
 
 You should have a firm grasp on Hugo [source
-organization](//gohugo.io/overview/source-directory) and how [data
-files](//gohugo.io/extras/datafiles) work. This tutorial uses the
+organization](//gohugo.io/overview/source-directory/) and how [data
+files](//gohugo.io/extras/datafiles/) work. This tutorial uses the
 beautiful [TOML](https://github.com/toml-lang/toml), which was
 designed for structured data files that are maintained by humans.
 If you are tying into other data sources you might want to use JSON,
@@ -91,7 +91,7 @@ but maybe not.
 ## Tutorial
 
 Ok, let's get on with it. If you prefer you can [fork the
-tutorial site](//github.com/skilstak/hugo-tutorial-link-data-to-type)
+tutorial site](https://github.com/skilstak/hugo-tutorial-link-data-to-type)
 we are making.
 
 ### Create the Empty Content Files
@@ -120,7 +120,7 @@ for i in spf13 bep robmuh betropper;do printf "+++\n+++\n" > $i.md; done
 
 Although content files can also end in `.html` we stick with `.md`
 so we have a consistent suffix we can chop off later with
-[substr](//gohugo.io/templates/functions#substr).
+[substr](//gohugo.io/templates/function/#substr).
 
 That's it for the content for the individual `person` types. The rest
 will come from the `data/person` files.
@@ -145,13 +145,13 @@ roles = ["student","user"]
 ```
 
 This is enough of a data file to illustrate the point. Make sure
-you understand the [data file](//gohugo.io/extras/data-files) concept
+you understand the [data file](//gohugo.io/extras/data-files/) concept
 fully to get the most out of it. It is really amazing.
 
 ### Create a Person Block Partial
 
-We use [partials](//gohugo.io/templates/partials) instead of [content
-views](//gohugo.io/templates/views), (which require
+We use [partials](//gohugo.io/templates/partials/) instead of [content
+views](//gohugo.io/templates/views/), (which require
 [`.Render`](//gohugo.io/templates/views/#rendering-view-inside-of-a-list)),
 because they are almost always preferred for their flexibility by
 allowing the passing of context, (which `.Render` infers instead
@@ -160,7 +160,7 @@ causing it to fail when using `.Site.Data` and not `.Site.Pages`).
 First create the partials directory to keep things organized:
 
 ```bash
-mkdir `layouts/partials/person`
+mkdir layouts/partials/person
 ```
 
 Now create a partial that just contains the markup for the default
@@ -172,7 +172,7 @@ person view. We will later pull this in from the content layout
 ```html
 <ul>
   <li>Name: {{ .name }}</li>
-  <li>GitHub: <a href="//github.com/{{ .github }}">{{ .github }}</a>
+  <li>GitHub: <a href="https://github.com/{{ .github }}">{{ .github }}</a>
   <li>Roles: {{ delimit .roles ", " }}</a>
 </ul>
 ```
@@ -184,7 +184,7 @@ the references are.
 
 Here's where the magic happens and we link it all together.  Now
 is a good time to make sure you understand what a [Hugo Content
-Type](//gohugo.io/content/types) is.
+Type](//gohugo.io/content/types/) is.
 
 First, get into the `layouts/person` directory. If you haven't made
 one yet, make it. Now add something like the following template
@@ -376,16 +376,16 @@ better habit and dependency anyway.
 ### Experiment
 
 Now that we've created the `students` data view (or section) you can
-experiment with tweeking everything to add views for `users`,
+experiment with tweaking everything to add views for `users`,
 `creators`, `admins`, and `people`.
 
 ## Use Data Views with Partials Instead of Content Views
 
 Before we end this tutorial it is important to discuss why
-[partials](//gohugo.io/templates/partials) are more valuable than
-[content views](//gohugo.io/templates/views).
+[partials](//gohugo.io/templates/partials/) are more valuable than
+[content views](//gohugo.io/templates/views/).
 
-[Content views](http://gohugo.io/templates/functions/#content-views),
+[Content views](//gohugo.io/templates/functions/#content-views),
 which require `.Render` to have a context only work with content
 types. Partials, which accept a context as the first argument,  work
 with anything and are therefore much easier to work with in general
