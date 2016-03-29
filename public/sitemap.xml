@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/admins/on/</loc>
+  </url>
+  
+  <url>
+    <loc>/creators/on/</loc>
+  </url>
+  
+  <url>
+    <loc>bep</loc>
+  </url>
+  
+  <url>
+    <loc>betropper</loc>
+  </url>
+  
+  <url>
+    <loc>robmuh</loc>
+  </url>
+  
+  <url>
+    <loc>spf13</loc>
+  </url>
+  
+  <url>
+    <loc>/students/on/</loc>
+  </url>
+  
+</urlset>

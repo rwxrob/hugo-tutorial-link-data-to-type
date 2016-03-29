@@ -1,5 +1,9 @@
+baseurl = "https://skilstak.github.io/hugo-tutorial-link-data-to-type"
 title = "Example: Linking Hugo Data to Content Types"
 pluralizelisttitles = false
+
+[params]
+src = "https://github.com/skilstak/hugo-tutorial-link-data-to-type"
 
 [permalinks]
 person = ":filename"
