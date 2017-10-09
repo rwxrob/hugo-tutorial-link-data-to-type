@@ -101,10 +101,10 @@ In this example, we'll create a few logical `person`s in different
 roles: `student`, `admin`, `creator`, and `user`. Start by making some
 nearly empty `content/person/` files:
 
-* `data/person/spf13.md`
-* `data/person/bep.md`
-* `data/person/robmuh.md`
-* `data/person/betropper.md`
+* `content/person/spf13.md`
+* `content/person/bep.md`
+* `content/person/robmuh.md`
+* `content/person/betropper.md`
 
 All you need in each one is the empty front-matter section:
 
