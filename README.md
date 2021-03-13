@@ -1,9 +1,8 @@
+# Linking Data to Hugo Types
 
 *Note: this tutorial content is taken from the [Hugo
 tutorial](https://gohugo.io/tutorial/link-data-to-type/) of
 the same title*
-
-# Linking Data to Hugo Types
 
 For many the most powerful part of Hugo is its amazing support for
 structured [data files](https://gohugo.io/extras/datafiles/). This feature allows
